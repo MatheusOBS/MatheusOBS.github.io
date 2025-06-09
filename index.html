@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matheus Oliveira | Dev Full Stack</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-SEUCODIGO"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-SEUCODIGO');
+    </script>
+    <style>
+        .gradient-text {
+            background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        .article-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        
+        .typewriter h1 {
+            overflow: hidden;
+            border-right: .15em solid #3b82f6;
+            white-space: nowrap;
+            margin: 0 auto;
+            animation: 
+                typing 3.5s steps(40, end),
+                blink-caret .75s step-end infinite;
+        }
+        
+        @keyframes typing {
+            from { width: 0 }
+            to { width: 100% }
+        }
+        
+        @keyframes blink-caret {
+            from, to { border-color: transparent }
+            50% { border-color: #3b82f6; }
+        }
+        
+        #theme-toggle:checked ~ .dot {
+            transform: translateX(100%);
+            background-color: #1e293b;
+        }
+        
+        .dark-mode {
+            background-color: #0f172a;
+            color: #f8fafc;
+        }
+        
+        .dark-mode .dark-bg {
+            background-color: #1e293b;
+        }
+        
+        .dark-mode .dark-border {
+            border-color: #334155;
+        }
+        
+        /* Banner Instagram */
+        .banner-instagram {
+            background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+            color: white;
+            padding: 15px;
+            text-align: center;
+            border-radius: 8px;
+            margin: 20px auto;
+            max-width: 90%;
+        }
+        .cta-button {
+            background: white;
+            color: #3b82f6;
+            padding: 8px 20px;
+            border-radius: 50px;
+            margin: 5px;
+            display: inline-block;
+            font-weight: bold;
+        }
+        
+        /* WhatsApp */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #25D366;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 60px;
+            font-size: 30px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.2);
+            z-index: 100;
+        }
+        
+        /* Destaque Projeto */
+        .highlight-project {
+            background: #f8fafc;
+            padding: 30px;
+            border-radius: 10px;
+            margin: 40px 0;
+            text-align: center;
+            border-left: 5px solid #3b82f6;
+        }
+        .demo-button {
+            background: #3b82f6;
+            color: white;
+            padding: 10px 25px;
+            border-radius: 50px;
+            display: inline-block;
+            margin-top: 15px;
+        }
+        
+        /* Newsletter */
+        .newsletter {
+            background: #f1f5f9;
+            padding: 30px;
+            border-radius: 10px;
+            margin: 40px 0;
+            text-align: center;
+        }
+        .newsletter input {
+            padding: 12px 20px;
+            border-radius: 50px;
+            border: 1px solid #ddd;
+            width: 300px;
+            max-width: 100%;
+            margin-right: 10px;
+        }
+        .newsletter button {
+            background: #3b82f6;
+            color: white;
+            padding: 12px 25px;
+            border-radius: 50px;
+            border: none;
+            cursor: pointer;
+        }
+        
+        /* Social Links */
+        .social-links a {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            background: #3b82f6;
+            color: white;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 40px;
+            margin: 0 5px;
+            transition: all 0.3s;
+        }
+        .social-links a:hover {
+            transform: translateY(-3px);
+            background: #2563eb;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-900 transition-colors duration-300">
+    <!-- Banner Instagram -->
+    <div class="banner-instagram">
+        <p>👋 Olá, visitante do Instagram! Veja meus projetos:</p>
+        <a href="#projects" class="cta-button">Projetos Recentes</a>
+        <a href="#contact" class="cta-button">Fale Comigo</a>
+    </div>
+
+    <!-- Header/Navbar -->
+    <header class="sticky top-0 z-50 bg-white/80 backdrop-blur-sm dark:bg-gray-900/80 dark:text-white shadow-sm">
+        <div class="container mx-auto px-4 py-4">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center space-x-2">
+                    <i class="fas fa-code text-2xl gradient-text"></i>
+                    <a href="#" class="text-xl font-bold">Matheus<span class="gradient-text">Dev</span></a>
+                </div>
+                
+                <div class="hidden md:flex space-x-8">
+                    <a href="#home" class="hover:text-blue-600 dark:hover:text-blue-400 transition">Início</a>
+                    <a href="#projects" class="hover:text-blue-600 dark:hover:text-blue-400 transition">Projetos</a>
+                    <a href="#skills" class="hover:text-blue-600 dark:hover:text-blue-400 transition">Habilidades</a>
+                    <a href="#contact" class="hover:text-blue-600 dark:hover:text-blue-400 transition">Contato</a>
+                </div>
+                
+                <div class="flex items-center space-x-4">
+                    <!-- Theme toggle -->
+                    <div class="flex items-center">
+                        <label for="theme-toggle" class="flex items-center cursor-pointer">
+                            <div class="relative">
+                                <input type="checkbox" id="theme-toggle" class="sr-only">
+                                <div class="block bg-gray-600 w-10 h-6 rounded-full"></div>
+                                <div class="dot absolute left-1 top-1 bg-white w-4 h-4 rounded-full transition"></div>
+                            </div>
+                        </label>
+                    </div>
+                    
+                    <a href="#contact" class="px-4 py-2 bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-full hover:shadow-lg transition">
+                        Contato
+                    </a>
+                    
+                    <!-- Mobile menu button -->
+                    <button id="mobile-menu-button" class="md:hidden text-gray-700 dark:text-gray-200">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Mobile menu -->
+            <div id="mobile-menu" class="hidden md:hidden mt-4 space-y-2 pb-2">
+                <a href="#home" class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-800 rounded transition">Início</a>
+                <a href="#projects" class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-800 rounded transition">Projetos</a>
+                <a href="#skills" class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-800 rounded transition">Habilidades</a>
+                <a href="#contact" class="block py-2 px-4 hover:bg-gray-100 dark:hover:bg-gray-800 rounded transition">Contato</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="py-20 bg-gradient-to-r from-blue-50 to-purple-50 dark:from-gray-900 dark:to-gray-800">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-10 md:mb-0">
+                    <div class="typewriter mb-4">
+                        <h1 class="text-4xl md:text-5xl font-bold mb-4 dark:text-white">
+                            Olá, eu sou <span class="gradient-text">Matheus Oliveira</span>
+                        </h1>
+                    </div>
+                    <p class="text-lg text-gray-600 dark:text-gray-300 mb-8">
+                        Desenvolvedor Full Stack especializado em Java, Angular e React. 
+                        Transformo ideias em soluções digitais eficientes.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#projects" class="px-6 py-3 bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-full hover:shadow-lg transition flex items-center">
+                            <i class="fas fa-laptop-code mr-2"></i> Ver Projetos
+                        </a>
+                        <a href="#contact" class="px-6 py-3 bg-white dark:bg-gray-800 dark:text-white border-2 border-blue-500 text-blue-500 rounded-full hover:bg-blue-50 dark:hover:bg-gray-700 transition flex items-center">
+                            <i class="fas fa-paper-plane mr-2"></i> Contate-me
+                        </a>
+                    </div>
+                </div>
+                <div class="md:w-1/2 flex justify-center">
+                    <div class="relative w-64 h-64 md:w-80 md:h-80">
+                        <div class="absolute inset-0 rounded-full bg-gradient-to-r from-blue-500 to-purple-600 opacity-20 blur-xl"></div>
+                        <img src="https://images.unsplash.com/photo-1571171637578-41bc2dd41cd2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" 
+                             alt="Matheus Oliveira" 
+                             class="relative rounded-full w-full h-full object-cover border-4 border-white dark:border-gray-800 shadow-lg">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Highlight Project -->
+    <div class="container mx-auto px-4">
+        <div class="highlight-project">
+            <h2 class="text-2xl font-bold mb-3">🌟 Projeto em Destaque: LookCar</h2>
+            <p class="mb-4">Site institucional com sistema de busca avançada desenvolvido em React JS</p>
+            <a href="#lookcar-project" class="demo-button">
+                <i class="fas fa-eye mr-2"></i> Ver Demonstração
+            </a>
+        </div>
+    </div>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-16 bg-white dark:bg-gray-900">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12 dark:text-white">
+                Minhas <span class="gradient-text">Habilidades</span>
+            </h2>
+            
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                <!-- Skill 1 -->
+                <div class="p-6 rounded-xl dark-bg border dark:border-gray-700 text-center transition hover:shadow-lg">
+                    <i class="fab fa-java text-4xl mb-4 text-red-500"></i>
+                    <h3 class="text-xl font-semibold mb-2 dark:text-white">Java</h3>
+                    <p class="text-gray-600 dark:text-gray-300">Bootcamp Santander DIO - 1000h</p>
+                </div>
+                
+                <!-- Skill 2 -->
+                <div class="p-6 rounded-xl dark-bg border dark:border-gray-700 text-center transition hover:shadow-lg">
+                    <i class="fab fa-angular text-4xl mb-4 text-red-600"></i>
+                    <h3 class="text-xl font-semibold mb-2 dark:text-white">Angular</h3>
+                    <p class="text-gray-600 dark:text-gray-300">Bootcamp Santander DIO</p>
+                </div>
+                
+                <!-- Skill 3 -->
+                <div class="p-6 rounded-xl dark-bg border dark:border-gray-700 text-center transition hover:shadow-lg">
+                    <i class="fab fa-react text-4xl mb-4 text-blue-400"></i>
+                    <h3 class="text-xl font-semibold mb-2 dark:text-white">React JS</h3>
+                    <p class="text-gray-600 dark:text-gray-300">Experiência em projeto LookCar</p>
+                </div>
+                
+                <!-- Skill 4 -->
+                <div class="p-6 rounded-xl dark-bg border dark:border-gray-700 text-center transition hover:shadow-lg">
+                    <i class="fab fa-git-alt text-4xl mb-4 text-orange-500"></i>
+                    <h3 class="text-xl font-semibold mb-2 dark:text-white">Git</h3>
+                    <p class="text-gray-600 dark:text-gray-300">Controle de versão em projetos</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-16 bg-gray-50 dark:bg-gray-800">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center mb-12">
+                <h2 class="text-3xl font-bold dark:text-white">
+                    Meus <span class="gradient-text">Projetos</span>
+                </h2>
+                <a href="#" class="text-blue-500 hover:text-blue-700 dark:hover:text-blue-400 flex items-center">
+                    Ver todos <i class="fas fa-arrow-right ml-2"></i>
+                </a>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Project 1 -->
+                <div id="lookcar-project" class="bg-white dark-bg rounded-xl overflow-hidden shadow-lg transition hover:shadow-xl">
+                    <img src="https://images.unsplash.com/photo-1522542550221-31fd19575a2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" 
+                         alt="LookCar" 
+                         class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="text-xl font-bold dark:text-white">LookCar - Site Institucional</h3>
+                            <span class="text-xs px-2 py-1 bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200 rounded-full">Estágio</span>
+                        </div>
+                        <p class="text-gray-600 dark:text-gray-300 mb-4">
+                            Site institucional para divulgar os produtos da Lookcar, com menu de busca avançada para peças de automóveis.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="text-xs px-2 py-1 bg-gray-200 dark:bg-gray-700 rounded-full">React JS</span>
+                            <span class="text-xs px-2 py-1 bg-gray-200 dark:bg-gray-700 rounded-full">HTML5</span>
+                            <span class="text-xs px-2 py-1 bg-gray-200 dark:bg-gray-700 rounded-full">CSS3/Sass</span>
+                            <span class="text-xs px-2 py-1 bg-gray-200 dark:bg-gray-700 rounded-full">Figma</span>
+                            <span class="text-xs px-2 py-1 bg-gray-200 dark:bg-gray-700 rounded-full">Git</span>
+                        </div>
+                        <div class="flex space-x-3">
+                            <span class="text-gray-500 text-sm">06/2024 - 07/2024</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 2 -->
+                <div class="bg-white dark-bg rounded-xl overflow-hidden shadow-lg transition hover:shadow-xl">
+                    <img src="https://images.unsplash.com/photo-1571171637578-41bc2dd41cd2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" 
+                         alt="Bootcamp" 
+                         class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="text-xl font-bold dark:text-white">Projetos do Bootcamp Santander DIO</h3>
+                            <span class="text-xs px-2 py-1 bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200 rounded-full">Formação</span>
+                        </div>
+                        <p class="text-gray-600 dark:text-gray-300 mb-4">
+                            Diversos projetos desenvolvidos durante o bootcamp de Java + Angular + Full Stack com carga horária de 1000 horas.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="text-xs px-2 py-1 bg-gray-200 dark:bg-gray-700 rounded-full">Java</span>
+                            <span class="text-xs px-2 py-1 bg-gray-200 dark:bg-gray-700 rounded-full">Angular</span>
+                            <span class="text-xs px-2 py-1 bg-gray-200 dark:bg-gray-700 rounded-full">Spring Boot</span>
+                            <span class="text-xs px-2 py-1 bg-gray-200 dark:bg-gray-700 rounded-full">MySQL</span>
+                        </div>
+                        <div class="flex space-x-3">
+                            <span class="text-gray-500 text-sm">03/2024 - Concluído</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter -->
+    <div class="container mx-auto px-4">
+        <div class="newsletter">
+            <h3 class="text-xl font-bold mb-4">📩 Receba meus novos projetos por e-mail</h3>
+            <form>
+                <input type="email" placeholder="Seu melhor e-mail" required>
+                <button type="submit">Quero Receber</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- About Section -->
+    <section id="about" class="py-16 bg-white dark:bg-gray-900">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/3 mb-10 md:mb-0">
+                    <div class="relative w-64 h-64 mx-auto">
+                        <div class="absolute inset-0 rounded-full bg-gradient-to-r from-blue-500 to-purple-600 opacity-20 blur-xl"></div>
+                        <img src="https://images.unsplash.com/photo-1571171637578-41bc2dd41cd2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" 
+                             alt="Matheus Oliveira" 
+                             class="relative rounded-full w-full h-full object-cover border-4 border-white dark:border-gray-800 shadow-lg">
+                    </div>
+                </div>
+                <div class="md:w-2/3 md:pl-12">
+                    <h2 class="text-3xl font-bold mb-6 dark:text-white">
+                        Sobre <span class="gradient-text">Mim</span>
+                    </h2>
+                    <p class="text-gray-600 dark:text-gray-300 mb-6">
+                        Sou Matheus Oliveira Barbosa dos Santos, Desenvolvedor Full Stack formado em Gestão da Tecnologia da Informação pela UNIP.
+                    </p>
+                    <p class="text-gray-600 dark:text-gray-300 mb-6">
+                        Completou o bootcamp intensivo de Java + Angular pelo Santander DIO (1000 horas) e possui experiência em desenvolvimento front-end com React.
+                    </p>
+                    <p class="text-gray-600 dark:text-gray-300 mb-8">
+                        Atualmente focado em aprimorar minhas habilidades em desenvolvimento web e construir soluções tecnológicas inovadoras.
+                    </p>
+                    
+                    <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-6">
+                        <a href="#" class="px-6 py-3 bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-full hover:shadow-lg transition flex items-center justify-center">
+                            <i class="fas fa-file-alt mr-2"></i> Baixar CV
+                        </a>
+                        <a href="http://www.linkedin.com/in/matheus-oliveira-barbosa-santos-21b508269" target="_blank" class="px-6 py-3 bg-white dark:bg-gray-700 dark:text-white border-2 border-blue-500 text-blue-500 rounded-full hover:bg-blue-50 dark:hover:bg-gray-600 transition flex items-center justify-center">
+                            <i class="fab fa-linkedin mr-2"></i> LinkedIn
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 bg-gray-50 dark:bg-gray-800">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12 dark:text-white">
+                Entre em <span class="gradient-text">Contato</span>
+            </h2>
+            
+            <div class="max-w-4xl mx-auto">
+                <div class="bg-white dark-bg rounded-xl shadow-lg p-8 md:p-10 dark-border">
+                    <form id="contact-form" class="space-y-6">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label for="name" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Nome</label>
+                                <input type="text" id="name" name="name" required 
+                                       class="w-full px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-white focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition">
+                            </div>
+                            <div>
+                                <label for="email" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Email</label>
+                                <input type="email" id="email" name="email" required 
+                                       class="w-full px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-white focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition">
+                            </div>
+                        </div>
+                        <div>
+                            <label for="subject" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Assunto</label>
+                            <input type="text" id="subject" name="subject" required 
+                                   class="w-full px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-white focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition">
+                        </div>
+                        <div>
+                            <label for="message" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Mensagem</label>
+                            <textarea id="message" name="message" rows="5" required 
+                                      class="w-full px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-white focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition"></textarea>
+                        </div>
+                        <div>
+                            <button type="submit" 
+                                    class="w-full px-6 py-3 bg-gradient-to-r from-blue-500 to-purple-600 text-white font-medium rounded-lg hover:shadow-lg transition transform hover:-translate-y-0.5">
+                                Enviar Mensagem
+                            </button>
+                        </div>
+                    </form>
+                    
+                    <div class="mt-10 grid grid-cols-1 md:grid-cols-3 gap-6">
+                        <div class="flex items-center">
+                            <div class="p-3 rounded-full bg-blue-100 text-blue-600 dark:bg-blue-900 dark:text-blue-200 mr-4">
+                                <i class="fas fa-envelope text-lg"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-medium text-gray-700 dark:text-gray-300">Email</h4>
+                                <p class="text-gray-500 dark:text-gray-400">MatheusOB559@gmail.com</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="p-3 rounded-full bg-green-100 text-green-600 dark:bg-green-900 dark:text-green-200 mr-4">
+                                <i class="fas fa-phone-alt text-lg"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-medium text-gray-700 dark:text-gray-300">Telefone</h4>
+                                <p class="text-gray-500 dark:text-gray-400">(11) 98202-8143</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="p-3 rounded-full bg-purple-100 text-purple-600 dark:bg-purple-900 dark:text-purple-200 mr-4">
+                                <i class="fas fa-map-marker-alt text-lg"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-medium text-gray-700 dark:text-gray-300">Localização</h4>
+                                <p class="text-gray-500 dark:text-gray-400">São Paulo - SP, 04883-155</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- WhatsApp Float -->
+    <a href="https://wa.me/5511982028143?text=Olá%20Matheus,%20vi%20seu%20portfólio!" 
+       class="whatsapp-float">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-gray-300 py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center space-x-2 mb-4">
+                        <i class="fas fa-code text-2xl text-blue-400"></i>
+                        <span class="text-xl font-bold text-white">Matheus<span class="text-blue-400">Dev</span></span>
+                    </div>
+                    <p class="mb-4">
+                        Portfólio profissional destacando projetos e habilidades em desenvolvimento web.
+                    </p>
+                    <div class="social-links">
+                        <a href="http://www.linkedin.com/in/matheus-oliveira-barbosa-santos-21b508269" target="_blank"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://github.com/" target="_blank"><i class="fab fa-github"></i></a>
+                        <a href="https://instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold text-white mb-4">Links Rápidos</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#home" class="hover:text-blue-400 transition">Início</a></li>
+                        <li><a href="#projects" class="hover:text-blue-400 transition">Projetos</a></li>
+                        <li><a href="#skills" class="hover:text-blue-400 transition">Habilidades</a></li>
+                        <li><a href="#contact" class="hover:text-blue-400 transition">Contato</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold text-white mb-4">Habilidades</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-blue-400 transition">Java</a></li>
+                        <li><a href="#" class="hover:text-blue-400 transition">Angular</a></li>
+                        <li><a href="#" class="hover:text-blue-400 transition">React</a></li>
+                        <li><a href="#" class="hover:text-blue-400 transition">Git</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-semibold text-white mb-4">Informações</h3>
+                    <ul class="space-y-2">
+                        <li class="flex items-start">
+                            <i class="fas fa-map-marker-alt mt-1 mr-2 text-blue-400"></i>
+                            <span>São Paulo - SP, 04883-155</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-envelope mr-2 text-blue-400"></i>
+                            <span>MatheusOB559@gmail.com</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-phone-alt mr-2 text-blue-400"></i>
+                            <span>(11) 98202-8143</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-700 mt-12 pt-8 text-center">
+                <p>© 2024 Matheus Oliveira. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="fixed bottom-6 right-6 p-3 bg-blue-500 text-white rounded-full shadow-lg hover:bg-blue-600 transition opacity-0 invisible">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+        // Theme Toggle
+        const themeToggle = document.getElementById('theme-toggle');
+        const html = document.documentElement;
+        
+        // Check for saved user preference, if any, on load of the page
+        if (localStorage.getItem('theme')) {
+            if (localStorage.getItem('theme') === 'dark') {
+                html.classList.add('dark-mode');
+                themeToggle.checked = true;
+            } else {
+                html.classList.remove('dark-mode');
+                themeToggle.checked = false;
+            }
+        } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            // If no preference, check for OS preference
+            html.classList.add('dark-mode');
+            themeToggle.checked = true;
+        }
+        
+        themeToggle.addEventListener('change', () => {
+            if (themeToggle.checked) {
+                html.classList.add('dark-mode');
+                localStorage.setItem('theme', 'dark');
+            } else {
+                html.classList.remove('dark-mode');
+                localStorage.setItem('theme', 'light');
+            }
+        });
+        
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    if (!mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.add('hidden');
+                    }
+                }
+            });
+        });
+        
+        // Back to Top Button
+        const backToTopButton = document.getElementById('back-to-top');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.remove('opacity-0', 'invisible');
+                backToTopButton.classList.add('opacity-100', 'visible');
+            } else {
+                backToTopButton.classList.remove('opacity-100', 'visible');
+                backToTopButton.classList.add('opacity-0', 'invisible');
+            }
+        });
+        
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+        
+        // Contact Form Submission
+        const contactForm = document.getElementById('contact-form');
+        
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            // Get form values
+            const formData = new FormData(contactForm);
+            const formValues = Object.fromEntries(formData.entries());
+            
+            // Here you would typically send the form data to a server
+            console.log('Form submitted:', formValues);
+            
+            // Show success message
+            alert('Mensagem enviada com sucesso! Em breve entro em contato.');
+            contactForm.reset();
+        });
+        
+        // Newsletter Form
+        const newsletterForm = document.querySelector('.newsletter form');
+        newsletterForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const email = newsletterForm.querySelector('input').value;
+            alert(Obrigado por se inscrever! Você receberá novidades no email: ${email});
+            newsletterForm.reset();
+        });
+        
+        // Article card hover effect
+        const articleCards = document.querySelectorAll('.article-card');
+        
+        articleCards.forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                card.style.transform = 'translateY(-5px)';
+                card.style.boxShadow = '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)';
+            });
+            
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = '';
+                card.style.boxShadow = '';
+            });
+        });
+    </script>
+</body>
+</html>
